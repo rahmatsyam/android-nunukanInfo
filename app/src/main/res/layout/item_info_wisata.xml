@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/card_margin">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_infoWisata"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/wisata_islamic" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0.5dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:padding="@dimen/padding_5"
+                    android:text="@string/txt_title"
+                    android:textSize="@dimen/font_size_14" />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/nunito_italic"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:padding="@dimen/padding_5"
+                    android:text="@string/txt_view"
+                    android:textSize="@dimen/font_size_12" />
+
+
+                <Button
+                    android:id="@+id/btn_readMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/margin_5"
+                    android:background="@color/colorTransparent"
+                    android:padding="@dimen/padding_5"
+                    android:text="@string/txt_readmore"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorDarkPurple"
+                    android:textSize="@dimen/font_size_12"
+                    android:visibility="visible" />
+
+                <ImageButton
+                    android:id="@+id/btn_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/margin_5"
+                    android:background="@color/colorTransparent"
+                    android:contentDescription="@string/todo"
+                    android:padding="@dimen/padding_5"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_up" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

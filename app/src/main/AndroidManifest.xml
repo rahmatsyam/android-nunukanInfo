@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.rahsyarigami.infonunukan">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.activity.KulinerDO"
+            android:label="Kuliner Delivery Order"
+            android:theme="@style/AppTheme.Food" />
+        <activity
+            android:name=".view.activity.TentangNunukan"
+            android:label="Tentang Nunukan"
+            android:theme="@style/AppTheme.About" />
+        <activity android:name=".util.BaseActivity" />
+        <activity
+            android:name=".view.activity.InfoWisata"
+            android:label="Info Wisata"
+            android:theme="@style/AppTheme.Tour" />
+        <activity
+            android:name=".view.activity.KontakPenting"
+            android:label="Kontak Penting"
+            android:theme="@style/AppTheme.Contact" />
+        <activity
+            android:name=".MainMenu"
+            android:label="Nunukan Info"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="dfb7885a4409440efeef04c3ba25967173c8afcc" />
+    </application>
+
+
+</manifest>

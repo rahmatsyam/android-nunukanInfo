@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Nunukan Info</string>
+    <string name="txt_info">Selamat datang di Nunukan Info \n Semoga  Aplikasi ini membantu Anda</string>
+    <string name="kotak_item">Kotak Item</string>
+    <string name="todo">TODO</string>
+    <string name="txt_view">Lorem ipsum dolor sit amet, consectetur adipisicing elit.  A ab aperiam illum ipsam omnis reiciendis. Ab aliquid asperiores at aut autem beatae blanditiis  commodi corporis debitis dicta dignissimos dolorem eveniet explicabo facere fugiat impedit libero</string>
+    <string name="txt_title">Lorem Ipsum</string>
+    <string name="txt_readmore">Baca Selengkapnya</string>
+    <string name="txt_back">Kembali</string>
+    <string name="txt_alamat">Alamat</string>
+    <string name="txt_telp">Telepon</string>
+    <string name="txt_show_tips">Geser ke kanan untuk melihat selanjutnya</string>
+    <string name="txt_profilkuliner">Restoran Rahsya</string>
+    <string name="txt_deskripsi">Deskripsi</string>
+
+    <!--Alamat kontak penting-->
+    <string name="txt_almt_rs_nunukan">Jl.Sungai Fatimah RT 04,Kabupaten Nunukan 77482</string>
+    <string name="txt_almt_pln_nunukan">Jl.Iskandar Muda, Nunukan Barat Kec. Nunukan, Kabupaten Nunukan, Kalimantan Utara 77482</string>
+    <string name="txt_almt_pdam_nunukan">Jl.Pembangunan No.70, Nunukan Barat, Kec. Nunukan, Kabupaten Nunukan, Kalimantan Utara 77482</string>
+    <string name="txt_almt_polres_nunukan">Jl.Ujang Dewa No.9, Nunukan Selatan, Kec. Nunukan, Kabupaten Nunukan, Kalimantan Utara 77482</string>
+    <string name="txt_almt_damkar_nunukan">Jl.Pembangunan, RT 10, Kel. Nunukan Barat, Kec. Nunukan, Kabupaten Nunukan, Kalimantan Utara 77482</string>
+
+    <!--Deskripsi kuliner-->
+    <string name="txt_desc_kuliner_novitasari">Menyediakan brownies coklat lumer, bubur kacang ijo, sayur dan lauk.Untuk pemesanan dan informasi lebih lanjut, silahkan hubungi via WA </string>
+    <string name="txt_desc_kuliner_riska">Menyediakan keripik singkong dan brownis.Untuk pemesanan dan informasi lebih lanjut,silahkan hubungi via WA</string>
+    <string name="txt_desc_kuliner_yeni">Menyediakan ayam geprek.Untuk pemesanan dan informasi lebih lanjut, silahkan hubungi via WA</string>
+
+    <!--TentangNunukan-->
+    <string name="txt_sejarah_nunukan">Sejarah terbentuknya kabupaten Kabupaten Nunukan merupakan wilayah pemekaran dari Kabupaten Bulungan, yang terbentuk berdasarkan pertimbangan luas wilyah, peningkatan pembangunan,dan peningkatan pelayanan kepada masyarakat. Pemekaran Kabupaten bulungan ini di pelopori oleh RA Besing yang pada saat itu menjabat sebagai Bupati Bulungan.Pada tahun 1999, pemerintah pusat memberlakukan otonomi daerah dengan didasari Undang-Undang Nomor 22 tahun 1999 tentang Pemerintahan Daerah. Nah, dgn dasar inilah dilakukan pemekaran pada KabupatenBulungan menjadi 2 kabupaten baru lainnya yaitu Kabupaten Nunukan dan kabupaten Malinau.</string>
+    <string name="txt_desc_suku">Suku asli penduduk Nunukan adalah suku Tidung. Meski begitu, di Nunukan dipenuhi beragam suku, seperti Jawa, Bugis, Dayak, Timor, dan sebagainya. Meski berbagai macam suku ada di pulau Nunukan,toleransi dan sikap saling mengharagi dijaga tinggi </string>
+    <string name="txt_desc_hasil_budidaya">Hasil budidaya di Nunukan berupa rumput laut,sarang burung walet,dan sawit </string>
+    <string name="txt_desc_geografi">Kabupaten Nunukan merupakan satu di antara lima kabupaten/kota di Propinsi Kalimantan Utara, dengan luas wilayah sebesar 14.263,68 km2. Berdasarkan geografisnya, Kabupaten Nunukan terletak di wilayah paling Utara Kalimantan  yang berbatasan langsung dengan negara tetangga yaitu Malaysia.Kabupaten Nunukan beriklim hutan tropika humida, terdiri dari musim kemarau dan musim hujan yang berganti setiap tahun serta dipengaruhi oleh angin Muson Barat pada bulan Nopember – April dan angin Muson Timur pada bulan Mei – Oktober.</string>
+    <!--Deskripsi wisata-->
+    <string name="txt_islamic_center">Islamic Center Nunukan ini resminya bernama Islamic Center HIDAYATTURRAHMAN(petunjuk dari Maha Pengasih), resmi digunakan pertama kali pada hari senin 30 November 2015. Berlokasi Jl. Sungai Jepun, Kelurahan Mansapa Kecamatan Nunukan Selatan.Islamic Center Nunukan ini dibagun sejak 2013 merupakan bagian dari program Gerbang Emas (Gerakan Membangun Ekonomi Aman dan Sejahtera) yang dicanangkan Pemkab Nunukan.Bangunan masjid ini memiliki satu kubah induk dengan 4 menara pendampingnya. Pada setiap menara juga dibuat kubah kecil yang dipasang dibagian puncak masing-masing menara. Kubah kecil pada setiap menaranya juga diberi warna yang senada dengan kubah induknya. Bagian kiri dan kanan juga ada angin-angin yang akan menambah kesejukan bagi para jamaah yang ada didalam masjid ini. Kemegahan interior masjid ini juga sangat tampak dengan adanya hiasan baik berupa lampu gantung maupun bahan material yang digunakan dalam masjid ini. </string>
+    <string name="txt_pantai_ecing">Pantai ecing hanya beberapa  kilometer dari pusat kota Nunukan. Bagi masyarakat Nunukan dan sekitarnya, Pantai Icing menjadi satu-satunya objek wisata pantai yang paling diminati. Pantai Icing dikenal dengan pasir putihnya yang nampak masih sangat alami.Sebagai daerah tujuan wisata yang diunggulkan, Pemkab Nunukan memberikan perhatian cukup baik untuk pengembangan fasilitas layanan di sekitar pantai itu. Yuk jalan-jalan kesini.</string>
+    <string name="txt_alun_alun">Taman Alun-alun yang berada di jantung ibukota Kabupaten Nunukan kini mulai dikenal. Selain dijadikan sarana berkumpul bagi masyarakat, lokasi tersebut juga menjadi lokasi untuk menikmati tanaman tumbuh indah.Pada malam hari khususnya akhir pekan, alun-alun selalu ramai dihiasi berbagai kuliner yang akan membuat kamu tertarik</string>
+    <string name="txt_binusan">Kawasan ini merupakan salah satu destinasi wisata alam yang terletak di dalam Kebun Raya Binusan dengan masih asrinya panorama alam hutan lindungnya, semakin membuat Air Terjun Binusan begitu terlihat eksotis. Banyaknya pepohonan yang mengelilingi kawasan air terjun justru menjadi payung alami serta membuat semakin adem di areal Air Terjun Binusan.</string>
+
+    <string name="txt_suku">Suku</string>
+    <string name="txt_sejarah">Sejarah</string>
+    <string name="txt_about">About</string>
+    <string name="txt_share">Share</string>
+    <string name="txt_send_to">Bagikan</string>
+    <string name="txt_version">Version 1.2</string>
+    <string name="txt_search">Search</string>
+    <string name="txt_searching">Hasil pencarian tidak ditemukan</string>
+    <string name="txt_hasil_budidaya">Hasil Budidaya</string>
+    <string name="txt_geografi">Geografi</string>
+    <string name="txt_copyright">copyright 2019 Kederoid \ncredit to flaticon and other participant</string>
+</resources>
