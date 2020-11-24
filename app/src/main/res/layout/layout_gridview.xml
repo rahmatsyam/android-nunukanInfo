@@ -9,8 +9,7 @@
     tools:context=".MainMenu"
     tools:showIn="@layout/activity_main">
 
-
-    <android.support.v7.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,11 +51,11 @@
                 android:text="@string/txt_info"
                 android:textSize="14sp" />
 
-
         </LinearLayout>
-    </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layoutHeader"
@@ -73,13 +72,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/padding_5">
-
-
             <include layout="@layout/layout_recylerview" />
 
-
         </LinearLayout>
-    </android.support.v7.widget.CardView>
 
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

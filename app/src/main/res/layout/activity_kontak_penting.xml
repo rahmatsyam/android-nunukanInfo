@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorLightGrey"
     android:orientation="horizontal"
-    tools:context=".activity.KontakPenting">
+    tools:context=".view.activity.KontakPenting">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view"
@@ -47,7 +47,6 @@
             android:background="@color/colorTransparent"
             android:contentDescription="@string/todo"
             android:paddingStart="@dimen/padding_8"
-            android:paddingLeft="@dimen/padding_8"
             app:srcCompat="@drawable/ic_search"
             tools:ignore="RtlSymmetry" />
 
@@ -55,7 +54,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/iv_compat"
-            android:layout_toRightOf="@id/iv_compat"
             android:fontFamily="@font/nunito_bold"
             android:padding="5dp"
             android:text="@string/txt_searching"
