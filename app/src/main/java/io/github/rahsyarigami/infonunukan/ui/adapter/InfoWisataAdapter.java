@@ -1,8 +1,5 @@
-package io.github.rahsyarigami.infonunukan.view.adapter;
+package io.github.rahsyarigami.infonunukan.ui.adapter;
 
-
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +9,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.RequestManager;
 
 import java.util.List;
 
 import io.github.rahsyarigami.infonunukan.R;
-import io.github.rahsyarigami.infonunukan.model.ItemTour;
+import io.github.rahsyarigami.infonunukan.data.model.ItemTour;
 
 public class InfoWisataAdapter extends RecyclerView.Adapter<InfoWisataAdapter.WisataViewHolder> {
 

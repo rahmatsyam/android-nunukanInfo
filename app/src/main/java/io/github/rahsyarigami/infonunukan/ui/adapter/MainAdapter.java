@@ -1,17 +1,18 @@
-package io.github.rahsyarigami.infonunukan.view.adapter;
+package io.github.rahsyarigami.infonunukan.ui.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 import io.github.rahsyarigami.infonunukan.R;
-import io.github.rahsyarigami.infonunukan.model.ItemData;
+import io.github.rahsyarigami.infonunukan.data.model.ItemData;
 
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {

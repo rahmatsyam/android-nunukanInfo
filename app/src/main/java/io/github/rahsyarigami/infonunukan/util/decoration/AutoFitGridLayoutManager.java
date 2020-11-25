@@ -1,9 +1,9 @@
-package io.github.rahsyarigami.infonunukan.decoration;
+package io.github.rahsyarigami.infonunukan.util.decoration;
 
 import android.content.Context;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class AutoFitGridLayoutManager extends GridLayoutManager {
     private int columnWidth;

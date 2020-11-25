@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,24 +20,24 @@
         </activity>
 
         <activity
-            android:name=".view.activity.KulinerDO"
+            android:name=".ui.detail.KulinerDO"
             android:label="Kuliner Delivery Order"
             android:theme="@style/AppTheme.Food" />
         <activity
-            android:name=".view.activity.TentangNunukan"
+            android:name=".ui.detail.TentangNunukan"
             android:label="Tentang Nunukan"
             android:theme="@style/AppTheme.About" />
-        <activity android:name=".util.BaseActivity" />
+        <activity android:name=".ui.base.BaseActivity" />
         <activity
-            android:name=".view.activity.InfoWisata"
+            android:name=".ui.detail.InfoWisata"
             android:label="Info Wisata"
             android:theme="@style/AppTheme.Tour" />
         <activity
-            android:name=".view.activity.KontakPenting"
+            android:name=".ui.detail.KontakPenting"
             android:label="Kontak Penting"
             android:theme="@style/AppTheme.Contact" />
         <activity
-            android:name=".MainMenu"
+            android:name=".ui.main.MainMenu"
             android:label="Nunukan Info"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

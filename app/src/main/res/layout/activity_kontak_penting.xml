@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorLightGrey"
     android:orientation="horizontal"
-    tools:context=".view.activity.KontakPenting">
+    tools:context=".ui.detail.KontakPenting">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view"

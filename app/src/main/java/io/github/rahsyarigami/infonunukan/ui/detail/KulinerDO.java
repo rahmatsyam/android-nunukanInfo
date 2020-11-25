@@ -1,12 +1,14 @@
-package io.github.rahsyarigami.infonunukan.view.activity;
+package io.github.rahsyarigami.infonunukan.ui.detail;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -16,10 +18,10 @@ import java.util.List;
 import java.util.Objects;
 
 import io.github.rahsyarigami.infonunukan.R;
-import io.github.rahsyarigami.infonunukan.decoration.CustomDividerItemDecoration;
-import io.github.rahsyarigami.infonunukan.model.ItemKuliner;
-import io.github.rahsyarigami.infonunukan.util.BaseActivity;
-import io.github.rahsyarigami.infonunukan.view.adapter.KulinerAdapter;
+import io.github.rahsyarigami.infonunukan.util.decoration.CustomDividerItemDecoration;
+import io.github.rahsyarigami.infonunukan.data.model.ItemKuliner;
+import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
+import io.github.rahsyarigami.infonunukan.ui.adapter.KulinerAdapter;
 
 public class KulinerDO extends BaseActivity {
 
@@ -32,7 +34,7 @@ public class KulinerDO extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        crashlyticsView();
+//        crashlyticsView();
         setContentView(R.layout.activity_kuliner_do);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
