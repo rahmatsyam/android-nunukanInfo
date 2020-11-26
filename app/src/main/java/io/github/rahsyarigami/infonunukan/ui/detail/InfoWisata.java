@@ -1,16 +1,17 @@
-package io.github.rahsyarigami.infonunukan.view.activity;
+package io.github.rahsyarigami.infonunukan.ui.detail;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,9 @@ import java.util.Objects;
 
 import io.github.rahsyarigami.infonunukan.R;
 
-import io.github.rahsyarigami.infonunukan.model.ItemTour;
-import io.github.rahsyarigami.infonunukan.util.BaseActivity;
-import io.github.rahsyarigami.infonunukan.view.adapter.InfoWisataAdapter;
+import io.github.rahsyarigami.infonunukan.data.model.ItemTour;
+import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
+import io.github.rahsyarigami.infonunukan.ui.adapter.InfoWisataAdapter;
 
 
 public class InfoWisata extends BaseActivity {
@@ -29,7 +30,7 @@ public class InfoWisata extends BaseActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager recyclerViewlayoutManager;
     List<ItemTour> itemList;
-    CardView cardView;
+    MaterialCardView cardView;
 
 
     @SuppressLint("NewApi")

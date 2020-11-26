@@ -13,7 +13,6 @@
         android:layout_width="@dimen/icon_profil"
         android:layout_height="@dimen/icon_profil"
         android:layout_marginEnd="@dimen/margin_10"
-        android:layout_marginRight="@dimen/margin_10"
         android:contentDescription="@string/todo"
         android:src="@drawable/img_ayam_geprek" />
 
@@ -23,7 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/img_profil_kuliner"
-        android:layout_toRightOf="@id/img_profil_kuliner"
         android:ellipsize="end"
         android:fontFamily="@font/nunito_black"
         android:text="@string/txt_profilkuliner"
@@ -37,7 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_nama_usaha"
         android:layout_toEndOf="@id/img_profil_kuliner"
-        android:layout_toRightOf="@id/img_profil_kuliner"
         android:text="@string/txt_title"
         android:textSize="@dimen/font_size_12" />
 
@@ -48,7 +45,6 @@
         android:layout_below="@id/tv_kontak_kuliner"
         android:layout_marginTop="@dimen/margin_5"
         android:layout_toEndOf="@id/img_profil_kuliner"
-        android:layout_toRightOf="@id/img_profil_kuliner"
         android:fontFamily="@font/nunito_black"
         android:text="@string/txt_deskripsi"
         android:textSize="@dimen/font_size_14" />
@@ -59,7 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_description"
         android:layout_toEndOf="@id/img_profil_kuliner"
-        android:layout_toRightOf="@id/img_profil_kuliner"
         android:maxLines="4"
         android:text="@string/txt_view"
         android:textSize="@dimen/font_size_12" />
@@ -69,7 +64,6 @@
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:background="@drawable/item_selector"
         android:contentDescription="@string/todo"
         app:srcCompat="@drawable/ic_whatsapp"

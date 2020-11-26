@@ -1,18 +1,20 @@
-package io.github.rahsyarigami.infonunukan;
+package io.github.rahsyarigami.infonunukan.ui.main;
 
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
@@ -21,15 +23,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import io.github.rahsyarigami.infonunukan.decoration.AutoFitGridLayoutManager;
+import io.github.rahsyarigami.infonunukan.R;
+import io.github.rahsyarigami.infonunukan.util.decoration.AutoFitGridLayoutManager;
 
-import io.github.rahsyarigami.infonunukan.model.ItemData;
-import io.github.rahsyarigami.infonunukan.util.BaseActivity;
-import io.github.rahsyarigami.infonunukan.view.activity.InfoWisata;
-import io.github.rahsyarigami.infonunukan.view.activity.KontakPenting;
-import io.github.rahsyarigami.infonunukan.view.activity.KulinerDO;
-import io.github.rahsyarigami.infonunukan.view.activity.TentangNunukan;
-import io.github.rahsyarigami.infonunukan.view.adapter.MainAdapter;
+import io.github.rahsyarigami.infonunukan.data.model.ItemData;
+import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
+import io.github.rahsyarigami.infonunukan.ui.detail.InfoWisata;
+import io.github.rahsyarigami.infonunukan.ui.detail.KontakPenting;
+import io.github.rahsyarigami.infonunukan.ui.detail.KulinerDO;
+import io.github.rahsyarigami.infonunukan.ui.detail.TentangNunukan;
+import io.github.rahsyarigami.infonunukan.ui.adapter.MainAdapter;
 
 
 public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickListener{
@@ -52,7 +55,7 @@ public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        crashlyticsView();
+//        crashlyticsView();
         setContentView(R.layout.activity_main);
 
         orientationPotrait();

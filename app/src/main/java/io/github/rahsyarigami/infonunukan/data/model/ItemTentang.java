@@ -1,4 +1,4 @@
-package io.github.rahsyarigami.infonunukan.model;
+package io.github.rahsyarigami.infonunukan.data.model;
 
 public class ItemTentang {
 

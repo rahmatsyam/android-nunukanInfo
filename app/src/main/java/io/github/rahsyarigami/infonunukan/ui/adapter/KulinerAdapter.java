@@ -1,17 +1,19 @@
-package io.github.rahsyarigami.infonunukan.view.adapter;
+package io.github.rahsyarigami.infonunukan.ui.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.RequestManager;
 
@@ -19,13 +21,13 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.github.rahsyarigami.infonunukan.R;
-import io.github.rahsyarigami.infonunukan.model.ItemKuliner;
+import io.github.rahsyarigami.infonunukan.data.model.ItemKuliner;
 
 public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.KulinerViewHolder> {
 
     private Context mContext;
-    private List<ItemKuliner> mItemKuliner;
-    private RequestManager mGlide;
+    private final List<ItemKuliner> mItemKuliner;
+    private final RequestManager mGlide;
 
     public KulinerAdapter(List<ItemKuliner> getItemKuliner, RequestManager glide) {
         // mContext = context;
@@ -99,7 +101,7 @@ public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.KulinerV
         return mItemKuliner.size();
     }
 
-    class KulinerViewHolder extends RecyclerView.ViewHolder {
+    static class KulinerViewHolder extends RecyclerView.ViewHolder {
         CircleImageView ivIconProfilKuliner;
         TextView tvNamaUsahaKuliner;
         TextView tvKontakKuliner;

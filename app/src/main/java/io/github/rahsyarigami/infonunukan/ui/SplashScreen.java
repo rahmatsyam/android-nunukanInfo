@@ -1,19 +1,20 @@
-package io.github.rahsyarigami.infonunukan;
+package io.github.rahsyarigami.infonunukan.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import io.github.rahsyarigami.infonunukan.ui.main.MainMenu;
 
 public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+//        Fabric.with(this, new Crashlytics());
 
         //Start home activity
-        startActivity(new Intent(SplashScreen.this,MainMenu.class));
+        startActivity(new Intent(SplashScreen.this, MainMenu.class));
 
         //close splashscreen
         finish();

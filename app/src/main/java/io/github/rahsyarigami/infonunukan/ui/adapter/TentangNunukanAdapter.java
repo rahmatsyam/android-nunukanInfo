@@ -1,8 +1,7 @@
-package io.github.rahsyarigami.infonunukan.view.adapter;
+package io.github.rahsyarigami.infonunukan.ui.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +9,18 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 import io.github.rahsyarigami.infonunukan.R;
-import io.github.rahsyarigami.infonunukan.model.ItemTentang;
+import io.github.rahsyarigami.infonunukan.data.model.ItemTentang;
 
 public class TentangNunukanAdapter extends RecyclerView.Adapter<TentangNunukanAdapter.NunukanViewHolder> {
 
-    private Context mContext;
-    private List<ItemTentang> mIteData;
+    private final Context mContext;
+    private final List<ItemTentang> mIteData;
 
     public TentangNunukanAdapter(List<ItemTentang> getItemTentang, Context context) {
         mContext = context;
@@ -53,7 +55,7 @@ public class TentangNunukanAdapter extends RecyclerView.Adapter<TentangNunukanAd
         return mIteData.size();
     }
 
-    class NunukanViewHolder extends RecyclerView.ViewHolder {
+    static class NunukanViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvSejarahNunukan;
         TextView tvSukuNunukan;

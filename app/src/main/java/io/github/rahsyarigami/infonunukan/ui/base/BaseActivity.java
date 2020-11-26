@@ -1,15 +1,14 @@
-package io.github.rahsyarigami.infonunukan.util;
+package io.github.rahsyarigami.infonunukan.ui.base;
 
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.AppCompatActivity;
+
 import android.view.MenuItem;
 
-import com.crashlytics.android.Crashlytics;
+import androidx.appcompat.app.AppCompatActivity;
 
-import io.fabric.sdk.android.Fabric;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -18,9 +17,9 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void crashlyticsView() {
-        Fabric.with(this, new Crashlytics());
-    }
+//    public void crashlyticsView() {
+//        Fabric.with(this, new Crashlytics());
+//    }
 
 
     @Override
