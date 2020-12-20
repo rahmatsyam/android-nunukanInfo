@@ -13,10 +13,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.synnapps.carouselview.CarouselView;
+
 import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
@@ -24,6 +22,9 @@ import java.util.List;
 
 
 import io.github.rahsyarigami.infonunukan.R;
+import io.github.rahsyarigami.infonunukan.databinding.ActivityMainBinding;
+import io.github.rahsyarigami.infonunukan.databinding.LayoutGridviewBinding;
+import io.github.rahsyarigami.infonunukan.databinding.LayoutRecylerviewBinding;
 import io.github.rahsyarigami.infonunukan.util.decoration.AutoFitGridLayoutManager;
 
 import io.github.rahsyarigami.infonunukan.data.model.ItemData;
@@ -32,19 +33,14 @@ import io.github.rahsyarigami.infonunukan.ui.detail.InfoWisata;
 import io.github.rahsyarigami.infonunukan.ui.detail.KontakPenting;
 import io.github.rahsyarigami.infonunukan.ui.detail.KulinerDO;
 import io.github.rahsyarigami.infonunukan.ui.detail.TentangNunukan;
-import io.github.rahsyarigami.infonunukan.ui.adapter.MainAdapter;
+import io.github.rahsyarigami.infonunukan.ui.main.adapter.MainAdapter;
 
 
-public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickListener{
+public class MainActivity extends BaseActivity implements MainAdapter.ListItemClickListener {
 
-
-    Toolbar toolbar;
-
-    CarouselView carouselView;
     List<ItemData> itemList;
 
     int[] sampleImages = {R.drawable.wisata_islamic, R.drawable.wisata_alun_alun, R.drawable.wisata_binusan, R.drawable.wisata_pantai_ecing, R.drawable.wisata_sunset};
-    RecyclerView recyclerView;
 
     LayoutInflater inflater;
     AlertDialog.Builder builder;
@@ -52,11 +48,23 @@ public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickL
 
     private int closeApp = 2;
 
+    private ActivityMainBinding mainBinding;
+    private LayoutGridviewBinding gridViewBinding;
+    private LayoutRecylerviewBinding recyclerViewBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        crashlyticsView();
-        setContentView(R.layout.activity_main);
+
+        mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        gridViewBinding = mainBinding.menuGridview;
+
+        recyclerViewBinding = gridViewBinding.menuRecyclerview;
+
+        View view = mainBinding.getRoot();
+
+        setContentView(view);
 
         orientationPotrait();
 
@@ -71,21 +79,19 @@ public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickL
     }
 
     private void setRecyclerView() {
-        recyclerView = findViewById(R.id.recyclerview);
+
         MainAdapter adapter = new MainAdapter(itemList, this);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
-        /*GridLayoutManager manager = new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
-        recyclerView.setLayoutManager(manager);*/
+
+        recyclerViewBinding.recyclerview.setAdapter(adapter);
+        recyclerViewBinding.recyclerview.setHasFixedSize(true);
         AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 500);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerViewBinding.recyclerview.setLayoutManager(layoutManager);
     }
 
     private void setCarouselView() {
-        carouselView = findViewById(R.id.caouselView);
-        carouselView.setImageListener(imageListener);
+        gridViewBinding.carouselView.setImageListener(imageListener);
 
-        carouselView.setPageCount(sampleImages.length);
+        gridViewBinding.carouselView.setPageCount(sampleImages.length);
 
 
     }
@@ -93,14 +99,13 @@ public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickL
     ImageListener imageListener = new ImageListener() {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.caouselView, 100, 100));
+            imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.carouselView, 100, 100));
             imageView.setImageResource(sampleImages[position]);
         }
     };
 
     private void setToolbar() {
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mainBinding.toolbar);
     }
 
     private void addData() {
@@ -118,6 +123,7 @@ public class MainMenu extends BaseActivity implements MainAdapter.ListItemClickL
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
