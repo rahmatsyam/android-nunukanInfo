@@ -39,7 +39,7 @@ public class KontakPenting extends BaseActivity implements SearchView.OnQueryTex
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        crashlyticsView();
+
         setContentView(R.layout.activity_kontak_penting);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {

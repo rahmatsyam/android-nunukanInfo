@@ -6,7 +6,7 @@
     android:background="@color/colorLightGrey">
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
@@ -88,7 +88,7 @@
 
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package io.github.rahsyarigami.infonunukan.ui.adapter;
+package io.github.rahsyarigami.infonunukan.ui.main.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

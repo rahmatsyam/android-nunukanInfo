@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.github.rahsyarigami.infonunukan.ui.main.MainMenu;
+import io.github.rahsyarigami.infonunukan.ui.main.MainActivity;
 
 public class SplashScreen extends AppCompatActivity {
     @Override
@@ -14,7 +14,7 @@ public class SplashScreen extends AppCompatActivity {
 //        Fabric.with(this, new Crashlytics());
 
         //Start home activity
-        startActivity(new Intent(SplashScreen.this, MainMenu.class));
+        startActivity(new Intent(SplashScreen.this, MainActivity.class));
 
         //close splashscreen
         finish();

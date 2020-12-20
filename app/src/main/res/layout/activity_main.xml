@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightGrey"
-    tools:context=".ui.main.MainMenu">
+    tools:context=".ui.main.MainActivity">
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -25,8 +26,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:textAlignment="inherit"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:titleTextColor="@color/colorBlack"
-                tools:targetApi="lollipop" />
+                app:titleTextColor="@color/colorBlack" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -38,9 +38,12 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/layout_gridview" />
+        <include
+            android:id="@+id/menu_gridview"
+            layout="@layout/layout_gridview" />
 
     </androidx.core.widget.NestedScrollView>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
