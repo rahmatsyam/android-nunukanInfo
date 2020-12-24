@@ -47,4 +47,6 @@
     <string name="txt_hasil_budidaya">Hasil Budidaya</string>
     <string name="txt_geografi">Geografi</string>
     <string name="txt_copyright">copyright 2019 Kederoid \ncredit to flaticon and other participant</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
