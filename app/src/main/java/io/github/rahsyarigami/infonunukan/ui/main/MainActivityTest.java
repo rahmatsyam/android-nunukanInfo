@@ -27,6 +27,7 @@ import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
 import io.github.rahsyarigami.infonunukan.ui.detail.contact.ImportantContactFragment;
 import io.github.rahsyarigami.infonunukan.ui.detail.deliverfood.FoodDeliverFragment;
 import io.github.rahsyarigami.infonunukan.ui.detail.tour.TourFragment;
+import io.github.rahsyarigami.infonunukan.ui.main.home.HomeFragment;
 import io.github.rahsyarigami.infonunukan.util.ViewUtils;
 
 

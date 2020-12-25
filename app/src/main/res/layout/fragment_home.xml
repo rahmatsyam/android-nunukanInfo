@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.main.HomeFragment">
+    tools:context=".ui.main.home.HomeFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layoutHeader"
@@ -19,31 +18,19 @@
         app:cardElevation="1dp"
         app:cardUseCompatPadding="true">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <com.denzcoskun.imageslider.ImageSlider
-                android:layout_width="match_parent"
                 android:id="@+id/image_slider"
-                app:iss_auto_cycle="true"
-                app:iss_delay="0"
-                app:iss_corner_radius="5"
-                app:iss_period="5000"
-
-                android:layout_height="180dp"/>
-
-            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_10"
-                android:layout_marginBottom="@dimen/margin_10"
-                android:fontFamily="@font/nunito_blackitalic"
-                android:gravity="center"
-                android:text="@string/txt_info"
-                android:textSize="14sp" />
+                android:layout_height="180dp"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="5"
+                app:iss_delay="0"
+                app:iss_period="5000" />
 
             <include
                 android:id="@+id/rv_about_nunukan"
@@ -52,7 +39,5 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
 
 </FrameLayout>

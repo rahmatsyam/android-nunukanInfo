@@ -1,4 +1,4 @@
-package io.github.rahsyarigami.infonunukan.ui.main;
+package io.github.rahsyarigami.infonunukan.ui.main.home;
 
 import io.github.rahsyarigami.infonunukan.data.local.RepoLocal;
 

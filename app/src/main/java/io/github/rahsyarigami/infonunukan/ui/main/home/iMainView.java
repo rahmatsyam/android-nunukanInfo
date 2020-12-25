@@ -1,4 +1,4 @@
-package io.github.rahsyarigami.infonunukan.ui.main;
+package io.github.rahsyarigami.infonunukan.ui.main.home;
 
 import java.util.List;
 

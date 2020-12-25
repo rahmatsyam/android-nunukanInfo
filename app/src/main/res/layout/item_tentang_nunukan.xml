@@ -5,10 +5,22 @@
     android:layout_margin="@dimen/padding_8"
     android:background="@color/colorWhite">
 
+    <TextView
+        android:id="@+id/txt_hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:fontFamily="@font/nunito_blackitalic"
+        android:gravity="center"
+        android:text="@string/txt_info"
+        android:textSize="14sp" />
+
     <ImageView
         android:id="@+id/iv_img_nunukan"
         android:layout_width="@dimen/icon_profil"
         android:layout_height="@dimen/icon_profil"
+        android:layout_below="@id/txt_hello"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/todo"
         android:scaleType="centerCrop"
@@ -72,7 +84,6 @@
         android:textSize="@dimen/font_size_12" />
 
     <TextView
-
         android:id="@+id/txt_hasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +94,6 @@
         android:textSize="@dimen/font_size_14" />
 
     <TextView
-
         android:id="@+id/tv_hasil_budidaya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,6 +101,5 @@
         android:fontFamily="@font/nunito_bolditalic"
         android:text="@string/txt_title"
         android:textSize="@dimen/font_size_12" />
-
 
 </RelativeLayout>
