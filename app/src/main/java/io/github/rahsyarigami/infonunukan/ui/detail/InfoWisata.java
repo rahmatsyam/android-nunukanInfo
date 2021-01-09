@@ -21,7 +21,7 @@ import io.github.rahsyarigami.infonunukan.R;
 
 import io.github.rahsyarigami.infonunukan.data.model.ItemTour;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
-import io.github.rahsyarigami.infonunukan.ui.adapter.InfoWisataAdapter;
+import io.github.rahsyarigami.infonunukan.ui.detail.tour.adapter.InfoWisataAdapter;
 
 
 public class InfoWisata extends BaseActivity {
@@ -60,7 +60,7 @@ public class InfoWisata extends BaseActivity {
 
         recyclerViewlayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         //InfoWisataAdapter adapter = new InfoWisataAdapter((ItemTourListPresenter) itemList);
-        InfoWisataAdapter adapter = new InfoWisataAdapter(itemList, Glide.with(this));
+        InfoWisataAdapter adapter = new InfoWisataAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(recyclerViewlayoutManager);
