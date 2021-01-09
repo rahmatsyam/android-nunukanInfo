@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import java.util.Objects;
 import io.github.rahsyarigami.infonunukan.R;
 import io.github.rahsyarigami.infonunukan.data.model.ItemTentang;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
-import io.github.rahsyarigami.infonunukan.ui.adapter.TentangNunukanAdapter;
 
 public class TentangNunukan extends BaseActivity {
 
@@ -42,12 +40,12 @@ public class TentangNunukan extends BaseActivity {
     }
 
     private void setRecyclerViewTentang() {
-        recyclerViewTentang = findViewById(R.id.recyclerview);
-        recyclerViewTentang.setHasFixedSize(true);
-        recyclerViewLayoutManager = new LinearLayoutManager(this);
-        recyclerViewTentang.setLayoutManager(recyclerViewLayoutManager);
-        TentangNunukanAdapter adapter = new TentangNunukanAdapter(itemList, this);
-        recyclerViewTentang.setAdapter(adapter);
+//        recyclerViewTentang = findViewById(R.id.recyclerview);
+//        recyclerViewTentang.setHasFixedSize(true);
+//        recyclerViewLayoutManager = new LinearLayoutManager(this);
+//        recyclerViewTentang.setLayoutManager(recyclerViewLayoutManager);
+//        TentangNunukanAdapter adapter = new TentangNunukanAdapter(itemList, this);
+//        recyclerViewTentang.setAdapter(adapter);
     }
 
     private void addDataTentang() {

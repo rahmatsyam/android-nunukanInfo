@@ -1,4 +1,4 @@
-package io.github.rahsyarigami.infonunukan.ui.main;
+package io.github.rahsyarigami.infonunukan.ui.main.home;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -10,7 +10,7 @@ import io.github.rahsyarigami.infonunukan.data.local.RepoLocal;
 import io.github.rahsyarigami.infonunukan.data.model.ItemTentang;
 import io.github.rahsyarigami.infonunukan.databinding.FragmentHomeBinding;
 import io.github.rahsyarigami.infonunukan.databinding.LayoutRecylerviewBinding;
-import io.github.rahsyarigami.infonunukan.ui.adapter.TentangNunukanAdapter;
+import io.github.rahsyarigami.infonunukan.ui.main.adapter.AboutNunukanAdapter;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseFragment;
 
 public class HomeFragment extends BaseFragment implements iMainView {
@@ -20,7 +20,7 @@ public class HomeFragment extends BaseFragment implements iMainView {
     private FragmentHomeBinding binding;
     private LayoutRecylerviewBinding rvBinding;
 
-    private TentangNunukanAdapter adapter;
+    private AboutNunukanAdapter adapter;
 
     private HomePresenter presenter;
 
@@ -42,7 +42,8 @@ public class HomeFragment extends BaseFragment implements iMainView {
     @Override
     public void displayData(List<ItemTentang> list) {
         this.aboutList = list;
-        adapter = new TentangNunukanAdapter(aboutList, getActivity());
+        adapter = new AboutNunukanAdapter(getActivity());
+        adapter.setData(aboutList);
         rvBinding.recyclerview.setAdapter(adapter);
     }
 

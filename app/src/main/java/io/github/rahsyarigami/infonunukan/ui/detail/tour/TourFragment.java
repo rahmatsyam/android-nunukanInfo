@@ -1,63 +1,82 @@
 package io.github.rahsyarigami.infonunukan.ui.detail.tour;
 
 import android.animation.ValueAnimator;
-import android.os.Bundle;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.SnapHelper;
 
 import android.os.Handler;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
 
-import io.github.rahsyarigami.infonunukan.data.local.RepoLocal;
-import io.github.rahsyarigami.infonunukan.databinding.FragmentTourBinding;
-import io.github.rahsyarigami.infonunukan.databinding.LayoutRecylerviewBinding;
-import io.github.rahsyarigami.infonunukan.ui.adapter.InfoWisataAdapter;
-import io.github.rahsyarigami.infonunukan.ui.base.BaseFragment;
+import java.util.List;
 
-public class TourFragment extends BaseFragment {
+import io.github.rahsyarigami.infonunukan.data.model.ItemTour;
+import io.github.rahsyarigami.infonunukan.databinding.FragmentTourBinding;
+
+
+import io.github.rahsyarigami.infonunukan.ui.base.BaseFragment;
+import io.github.rahsyarigami.infonunukan.ui.detail.tour.adapter.InfoWisataAdapter;
+import io.github.rahsyarigami.infonunukan.ui.detail.tour.adapter.OnItemTourClickListener;
+import io.github.rahsyarigami.infonunukan.util.StarSnapHelper;
+
+public class TourFragment extends BaseFragment implements iTourView {
 
 
     private FragmentTourBinding binding;
-    private LayoutRecylerviewBinding recyclerViewBinding;
+//    private LayoutRecylerviewBinding recyclerViewBinding;
 
     public static final String SECOND_FRAGMENT = "second_fragment";
+
+    private TourPresenter presenter;
+    private InfoWisataAdapter adapter;
+
+    int REQUEST_CODE_DIALOG_FRAGMENT = 30;
 
     public TourFragment() {
         // Required empty public constructor
     }
 
 
-    // TODO: Rename and change types and number of parameters
-    public static TourFragment newInstance(String param1, String param2) {
-        TourFragment fragment = new TourFragment();
-        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     protected void initEvents() {
 
-        recyclerViewBinding = binding.rvTour;
+//        recyclerViewBinding = binding.rvTour;
 
-        setRecyclerTour();
-
-        fadeCardView();
+        presenter = new TourPresenter(this);
+        presenter.onCreateView();
+        presenter.loadData();
 
     }
 
-    private void setRecyclerTour() {
+    @Override
+    public void displayData(List<ItemTour> tourList) {
+        adapter = new InfoWisataAdapter();
+        adapter.setData(tourList, Glide.with(this));
+        binding.rvTour.setAdapter(adapter);
+        adapter.setItemClick(new OnItemTourClickListener() {
+            @Override
+            public void onItemClick(ItemTour itemTour) {
 
-        InfoWisataAdapter adapter = new InfoWisataAdapter(RepoLocal.getTourData(), Glide.with(this));
+                DetailTourDialogFragment dialogFragment = DetailTourDialogFragment.newInstance(itemTour);
+                dialogFragment.setTargetFragment(TourFragment.this, REQUEST_CODE_DIALOG_FRAGMENT);
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                dialogFragment.show(ft, DetailTourDialogFragment.TAG_FULLSCREEN);
 
+            }
+        });
+    }
+
+    @Override
+    public void setUpView() {
+        SnapHelper snapHelper = new StarSnapHelper();
+        snapHelper.attachToRecyclerView(binding.rvTour);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewBinding.recyclerview.setLayoutManager(linearLayoutManager);
-        recyclerViewBinding.recyclerview.setHasFixedSize(true);
-        recyclerViewBinding.recyclerview.setAdapter(adapter);
+        binding.rvTour.setLayoutManager(linearLayoutManager);
+        binding.rvTour.setHasFixedSize(true);
 
     }
 

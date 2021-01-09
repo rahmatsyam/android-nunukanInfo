@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.tour.DetailTourDialogFragment">
+
+    <ImageView
+        android:id="@+id/img_infoWisata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/todo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wisata_islamic" />
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_black"
+        android:drawablePadding="8dp"
+        android:gravity="center_horizontal|start"
+        android:padding="8dp"
+        android:text="Nunukan Wisata"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_baseline_close_24" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@id/img_infoWisata"
+        android:layout_alignTop="@id/img_infoWisata"
+        android:layout_alignEnd="@id/img_infoWisata"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bg_radius_top"
+        android:padding="16dp">
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_radius_view"
+            android:layout_width="80dp"
+            android:layout_height="4dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="16sp"
+                    android:text="Informasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:paddingTop="4dp"
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/nunito_bolditalic"
+                    android:text="@string/txt_view"
+                    android:textSize="@dimen/font_size_12" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+
+</RelativeLayout>
