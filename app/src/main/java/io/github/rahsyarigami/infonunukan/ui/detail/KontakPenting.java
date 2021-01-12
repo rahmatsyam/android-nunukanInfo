@@ -23,7 +23,7 @@ import java.util.Objects;
 import io.github.rahsyarigami.infonunukan.R;
 import io.github.rahsyarigami.infonunukan.data.model.ItemKontak;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
-import io.github.rahsyarigami.infonunukan.ui.adapter.KontakPentingAdapter;
+import io.github.rahsyarigami.infonunukan.ui.detail.contact.adapter.KontakPentingAdapter;
 
 public class KontakPenting extends BaseActivity implements SearchView.OnQueryTextListener {
 

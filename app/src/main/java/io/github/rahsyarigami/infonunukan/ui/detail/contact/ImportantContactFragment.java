@@ -5,19 +5,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Handler;
 import android.view.View;
 
+import java.util.List;
+
 import io.github.rahsyarigami.infonunukan.data.local.RepoLocal;
+import io.github.rahsyarigami.infonunukan.data.model.ItemKontak;
 import io.github.rahsyarigami.infonunukan.databinding.FragmentImportantContactBinding;
 import io.github.rahsyarigami.infonunukan.databinding.LayoutRecylerviewBinding;
-import io.github.rahsyarigami.infonunukan.ui.adapter.KontakPentingAdapter;
+import io.github.rahsyarigami.infonunukan.ui.detail.contact.adapter.KontakPentingAdapter;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseFragment;
 
 
-public class ImportantContactFragment extends BaseFragment {
+public class ImportantContactFragment extends BaseFragment implements iContactView {
 
     public static final String THIRD_FRAGMENT = "third_fragment";
 
     private FragmentImportantContactBinding binding;
     private LayoutRecylerviewBinding recyclerViewBinding;
+
+    private KontakPentingAdapter adapter;
+    private ContactPresenter presenter;
 
 
     public ImportantContactFragment() {
@@ -28,18 +34,7 @@ public class ImportantContactFragment extends BaseFragment {
     protected void initEvents() {
         recyclerViewBinding = binding.rvContact;
 
-        setRVContact();
-
         stopLoadShimmer();
-    }
-
-    private void setRVContact() {
-        KontakPentingAdapter adapter = new KontakPentingAdapter(RepoLocal.getContactData(), getActivity());
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerViewBinding.recyclerview.setLayoutManager(layoutManager);
-        recyclerViewBinding.recyclerview.setHasFixedSize(true);
-        recyclerViewBinding.recyclerview.setAdapter(adapter);
-
     }
 
     private void stopLoadShimmer() {
@@ -65,4 +60,17 @@ public class ImportantContactFragment extends BaseFragment {
         binding.shimmerView.stopShimmer();
     }
 
+    @Override
+    public void displayData(List<ItemKontak> contactList) {
+        adapter = new KontakPentingAdapter(RepoLocal.getContactData(), getActivity());
+        recyclerViewBinding.recyclerview.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void setUpView() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerViewBinding.recyclerview.setLayoutManager(layoutManager);
+        recyclerViewBinding.recyclerview.setHasFixedSize(true);
+    }
 }
