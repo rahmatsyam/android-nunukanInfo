@@ -69,7 +69,7 @@ public class KontakPenting extends BaseActivity implements SearchView.OnQueryTex
         recyclerViewLayoutManager = new LinearLayoutManager(this);
         //recyclerViewContact.setItemAnimator(new DefaultItemAnimator());
         recyclerViewContact.setLayoutManager(recyclerViewLayoutManager);
-        KontakPentingAdapter adapter = new KontakPentingAdapter(itemList, this);
+        KontakPentingAdapter adapter = new KontakPentingAdapter();
         recyclerViewContact.setAdapter(adapter);
     }
 
@@ -127,7 +127,7 @@ public class KontakPenting extends BaseActivity implements SearchView.OnQueryTex
     public boolean onQueryTextChange(String newText) {
         final List<ItemKontak> filterModelList = filter(itemList, newText);
         if (filterModelList.size() > 0) {
-            recyclerViewadapter = new KontakPentingAdapter(filterModelList, this);
+//            recyclerViewadapter = new KontakPentingAdapter(filterModelList, this);
             recyclerViewContact.setAdapter(recyclerViewadapter);
             return true;
         } else {
@@ -148,7 +148,7 @@ public class KontakPenting extends BaseActivity implements SearchView.OnQueryTex
             }
         }
 
-        recyclerViewadapter = new KontakPentingAdapter(filterModelList, this);
+//        recyclerViewadapter = new KontakPentingAdapter(filterModelList, this);
         recyclerViewContact.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewContact.setAdapter(recyclerViewadapter);
         recyclerViewadapter.notifyDataSetChanged();
