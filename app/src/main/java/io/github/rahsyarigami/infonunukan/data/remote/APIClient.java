@@ -7,6 +7,7 @@ import com.squareup.moshi.Moshi;
 import java.util.concurrent.TimeUnit;
 
 import io.github.rahsyarigami.infonunukan.data.model.ResponseContact;
+import io.github.rahsyarigami.infonunukan.data.model.ResponseFood;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -48,6 +49,11 @@ public class APIClient {
 
     public static void getResponseContact(Callback<ResponseContact> callback) {
         Call<ResponseContact> call = api.getResponseContact();
+        call.enqueue(callback);
+    }
+
+    public static void getResponseFood(Callback<ResponseFood> callback) {
+        Call<ResponseFood> call = api.getResponseFood();
         call.enqueue(callback);
     }
 }

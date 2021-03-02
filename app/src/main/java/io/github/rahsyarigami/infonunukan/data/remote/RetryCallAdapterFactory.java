@@ -30,8 +30,8 @@ public class RetryCallAdapterFactory extends CallAdapter.Factory {
     @Nullable
     @Override
     public CallAdapter<?, ?> get(@NonNull Type returnType, @NonNull Annotation[] annotations, @NonNull Retrofit retrofit) {
-        int shouldRetry = 10;
-        Retry retry = getRetry(annotations);
+        int shouldRetry = 0;
+        final Retry retry = getRetry(annotations);
         if (retry != null) {
             shouldRetry = retry.max();
         }
@@ -52,7 +52,7 @@ public class RetryCallAdapterFactory extends CallAdapter.Factory {
         return null;
     }
 
-    static class RetryCallAdapter<R, T> implements CallAdapter<R, T> {
+    static final class RetryCallAdapter<R, T> implements CallAdapter<R, T> {
 
         private final CallAdapter<R, T> delegated;
         private final int maxRetries;
@@ -75,7 +75,7 @@ public class RetryCallAdapterFactory extends CallAdapter.Factory {
         }
     }
 
-    static class RetryingCall<R> implements Call<R> {
+    static final class RetryingCall<R> implements Call<R> {
 
         private final Call<R> delegated;
         private final int maxRetries;
@@ -130,7 +130,7 @@ public class RetryCallAdapterFactory extends CallAdapter.Factory {
         }
     }
 
-    static class RetryCallback<T> implements Callback<T> {
+    static final class RetryCallback<T> implements Callback<T> {
 
         private final Call<T> call;
         private final Callback<T> callback;
@@ -142,7 +142,7 @@ public class RetryCallAdapterFactory extends CallAdapter.Factory {
             this.maxRetries = maxRetries;
         }
 
-        private final AtomicInteger retryCount = new AtomicInteger();
+        private final AtomicInteger retryCount = new AtomicInteger(0);
 
         @Override
         public void onResponse(@NonNull Call<T> call, @NonNull Response<T> response) {
@@ -170,6 +170,7 @@ public class RetryCallAdapterFactory extends CallAdapter.Factory {
 
         private void retryCall() {
             Log.w(TAG, "" + retryCount.get() + "/" + maxRetries + " " + " Retrying...");
+            call.clone().enqueue(this);
         }
 
 

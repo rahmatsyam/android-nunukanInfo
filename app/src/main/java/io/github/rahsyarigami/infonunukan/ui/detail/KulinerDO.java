@@ -21,7 +21,7 @@ import io.github.rahsyarigami.infonunukan.R;
 import io.github.rahsyarigami.infonunukan.util.decoration.CustomDividerItemDecoration;
 import io.github.rahsyarigami.infonunukan.data.model.ItemKuliner;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
-import io.github.rahsyarigami.infonunukan.ui.adapter.KulinerAdapter;
+import io.github.rahsyarigami.infonunukan.ui.detail.deliverfood.adapter.KulinerAdapter;
 
 public class KulinerDO extends BaseActivity {
 
@@ -49,8 +49,8 @@ public class KulinerDO extends BaseActivity {
         recyclerViewLayoutManager = new LinearLayoutManager(this);
         recyclerViewKuliner.setLayoutManager(recyclerViewLayoutManager);
         recyclerViewKuliner.addItemDecoration(new CustomDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 0));
-        KulinerAdapter adapter = new KulinerAdapter(itemList, Glide.with(this));
-        recyclerViewKuliner.setAdapter(adapter);
+//        KulinerAdapter adapter = new KulinerAdapter(itemList, Glide.with(this));
+//        recyclerViewKuliner.setAdapter(adapter);
 
         stopLoadShimmer();
     }
