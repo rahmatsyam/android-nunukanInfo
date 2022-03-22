@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-
-import com.synnapps.carouselview.ImageListener;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,20 +89,26 @@ public class MainActivity extends BaseActivity implements MainAdapter.ListItemCl
     }
 
     private void setCarouselView() {
-        gridViewBinding.carouselView.setImageListener(imageListener);
+        ArrayList<SlideModel> images = new ArrayList<>();
+        images.add(new SlideModel(R.drawable.wisata_islamic, ScaleTypes.FIT));
+        images.add(new SlideModel(R.drawable.wisata_alun_alun, ScaleTypes.FIT));
+        images.add(new SlideModel(R.drawable.wisata_binusan, ScaleTypes.FIT));
+        images.add(new SlideModel(R.drawable.wisata_pantai_ecing, ScaleTypes.FIT));
+        images.add(new SlideModel(R.drawable.wisata_sunset, ScaleTypes.FIT));
 
-        gridViewBinding.carouselView.setPageCount(sampleImages.length);
+
+        gridViewBinding.imageSlider.setImageList(images);
 
 
     }
 
-    ImageListener imageListener = new ImageListener() {
-        @Override
-        public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.carouselView, 100, 100));
-            imageView.setImageResource(sampleImages[position]);
-        }
-    };
+//    ImageListener imageListener = new ImageListener() {
+//        @Override
+//        public void setImageForPosition(int position, ImageView imageView) {
+//            imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.carouselView, 100, 100));
+//            imageView.setImageResource(sampleImages[position]);
+//        }
+//    };
 
     private void setToolbar() {
         setSupportActionBar(mainBinding.toolbar);
