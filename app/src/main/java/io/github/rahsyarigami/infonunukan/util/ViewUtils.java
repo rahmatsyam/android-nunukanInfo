@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import java.util.Objects;
+
 import io.github.rahsyarigami.infonunukan.R;
 
 public class ViewUtils {
@@ -18,7 +20,7 @@ public class ViewUtils {
         if (fragmentManager.findFragmentByTag(tag) == null) {
             fragmentManager.beginTransaction().add(R.id.frame_container, fragmentPosition, tag).hide(currentFragment).commit();
         } else {
-            if (!fragmentManager.findFragmentByTag(tag).isVisible()) {
+            if (!Objects.requireNonNull(fragmentManager.findFragmentByTag(tag)).isVisible()) {
                 fragmentManager.beginTransaction().hide(currentFragment).show(fragmentPosition).commit();
             }
         }

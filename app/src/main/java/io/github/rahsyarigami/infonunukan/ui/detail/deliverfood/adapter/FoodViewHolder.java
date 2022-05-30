@@ -1,5 +1,7 @@
 package io.github.rahsyarigami.infonunukan.ui.detail.deliverfood.adapter;
 
+import android.text.TextUtils;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.RequestManager;
@@ -22,5 +24,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder {
         mBinding.tvKontakKuliner.setText(itemFoodDeliver.getTelpon());
         glide.load(itemFoodDeliver.getUrlPhoto()).centerCrop().into(mBinding.imgProfilKuliner);
         mBinding.btnMore.setOnClickListener(v -> listener.onItemClick(itemFoodDeliver));
+        mBinding.tvDeskripsiKuliner.setLines(3);
+        mBinding.tvDeskripsiKuliner.setEllipsize(TextUtils.TruncateAt.END);
     }
 }

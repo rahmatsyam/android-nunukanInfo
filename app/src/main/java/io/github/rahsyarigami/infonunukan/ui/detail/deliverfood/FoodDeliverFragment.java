@@ -17,7 +17,7 @@ import io.github.rahsyarigami.infonunukan.ui.base.BaseFragment;
 
 public class FoodDeliverFragment extends BaseFragment implements iFoodView {
 
-    private FragmentFoodDeliverBinding binding;
+    protected FragmentFoodDeliverBinding binding;
     private LayoutRecylerviewBinding rvBinding;
 
     public static final String FOURTH_FRAGMENT = "fourth_fragment";
@@ -33,6 +33,7 @@ public class FoodDeliverFragment extends BaseFragment implements iFoodView {
 
     @Override
     protected void initEvents() {
+
         rvBinding = binding.rvFoodDeliver;
 
         presenter = new FoodDeliverPresenter(this);
@@ -52,7 +53,6 @@ public class FoodDeliverFragment extends BaseFragment implements iFoodView {
     public void displayData(List<ItemFoodDeliver> listFood) {
         adapter = new KulinerAdapter();
         adapter.setData(listFood, Glide.with(this));
-        adapter.notifyDataSetChanged();
         rvBinding.recyclerview.setAdapter(adapter);
         adapter.setClickItem(itemFoodDeliver -> {
             FoodDetailDialogFragment dialogFragment = FoodDetailDialogFragment.newInstance(itemFoodDeliver);

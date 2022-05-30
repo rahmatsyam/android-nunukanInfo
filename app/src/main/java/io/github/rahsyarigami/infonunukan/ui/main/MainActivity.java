@@ -4,43 +4,30 @@ package io.github.rahsyarigami.infonunukan.ui.main;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
-
-import java.util.ArrayList;
 import java.util.List;
-
 
 import io.github.rahsyarigami.infonunukan.R;
 import io.github.rahsyarigami.infonunukan.databinding.ActivityMainBinding;
-import io.github.rahsyarigami.infonunukan.databinding.LayoutGridviewBinding;
-import io.github.rahsyarigami.infonunukan.databinding.LayoutRecylerviewBinding;
-import io.github.rahsyarigami.infonunukan.util.decoration.AutoFitGridLayoutManager;
-
-import io.github.rahsyarigami.infonunukan.data.model.ItemData;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
-import io.github.rahsyarigami.infonunukan.ui.detail.InfoWisata;
-import io.github.rahsyarigami.infonunukan.ui.detail.KontakPenting;
-import io.github.rahsyarigami.infonunukan.ui.detail.KulinerDO;
-import io.github.rahsyarigami.infonunukan.ui.detail.TentangNunukan;
-import io.github.rahsyarigami.infonunukan.ui.main.adapter.MainAdapter;
+import io.github.rahsyarigami.infonunukan.ui.detail.contact.ImportantContactFragment;
+import io.github.rahsyarigami.infonunukan.ui.detail.deliverfood.FoodDeliverFragment;
+import io.github.rahsyarigami.infonunukan.ui.detail.tour.TourFragment;
+import io.github.rahsyarigami.infonunukan.ui.main.home.HomeFragment;
+import io.github.rahsyarigami.infonunukan.util.ViewUtils;
 
 
-public class MainActivity extends BaseActivity implements MainAdapter.ListItemClickListener {
+public class MainActivity extends BaseActivity {
 
-    List<ItemData> itemList;
-
-    int[] sampleImages = {R.drawable.wisata_islamic, R.drawable.wisata_alun_alun, R.drawable.wisata_binusan, R.drawable.wisata_pantai_ecing, R.drawable.wisata_sunset};
 
     LayoutInflater inflater;
     AlertDialog.Builder builder;
@@ -49,77 +36,102 @@ public class MainActivity extends BaseActivity implements MainAdapter.ListItemCl
     private int closeApp = 2;
 
     private ActivityMainBinding mainBinding;
-    private LayoutGridviewBinding gridViewBinding;
-    private LayoutRecylerviewBinding recyclerViewBinding;
 
+
+    private FragmentManager fragmentManager;
+
+    private Fragment currentFragment, fragmentPage1, fragmentPage2, fragmentPage3, fragmentPage4;
+
+
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
 
-        gridViewBinding = mainBinding.menuGridview;
-
-        recyclerViewBinding = gridViewBinding.menuRecyclerview;
 
         View view = mainBinding.getRoot();
 
         setContentView(view);
 
-        orientationPotrait();
-
         setToolbar();
 
-        setCarouselView();
+        fragmentPage1 = new HomeFragment();
+        fragmentPage2 = new TourFragment();
+        fragmentPage3 = new ImportantContactFragment();
+        fragmentPage4 = new FoodDeliverFragment();
 
-        addData();
+        fragmentManager = getSupportFragmentManager();
 
-        setRecyclerView();
+        firstFragment();
 
-    }
-
-    private void setRecyclerView() {
-
-        MainAdapter adapter = new MainAdapter(itemList, this);
-
-        recyclerViewBinding.recyclerview.setAdapter(adapter);
-        recyclerViewBinding.recyclerview.setHasFixedSize(true);
-        AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 500);
-        recyclerViewBinding.recyclerview.setLayoutManager(layoutManager);
-    }
-
-    private void setCarouselView() {
-        ArrayList<SlideModel> images = new ArrayList<>();
-        images.add(new SlideModel(R.drawable.wisata_islamic, ScaleTypes.FIT));
-        images.add(new SlideModel(R.drawable.wisata_alun_alun, ScaleTypes.FIT));
-        images.add(new SlideModel(R.drawable.wisata_binusan, ScaleTypes.FIT));
-        images.add(new SlideModel(R.drawable.wisata_pantai_ecing, ScaleTypes.FIT));
-        images.add(new SlideModel(R.drawable.wisata_sunset, ScaleTypes.FIT));
-
-
-        gridViewBinding.imageSlider.setImageList(images);
+        mainBinding.bottomNavigation.setItemSelected(R.id.page_1, true);
+        mainBinding.bottomNavigation.setOnItemSelectedListener(item -> {
+            switch (item) {
+                case R.id.page_1:
+                    setCurrentFragment(HomeFragment.FIRST_FRAGMENT);
+                    break;
+                case R.id.page_2:
+                    setCurrentFragment(TourFragment.SECOND_FRAGMENT);
+                    break;
+                case R.id.page_3:
+                    setCurrentFragment(ImportantContactFragment.THIRD_FRAGMENT);
+                    break;
+                case R.id.page_4:
+                    setCurrentFragment(FoodDeliverFragment.FOURTH_FRAGMENT);
+                    break;
+            }
+        });
 
 
     }
 
-//    ImageListener imageListener = new ImageListener() {
-//        @Override
-//        public void setImageForPosition(int position, ImageView imageView) {
-//            imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.carouselView, 100, 100));
-//            imageView.setImageResource(sampleImages[position]);
-//        }
-//    };
 
     private void setToolbar() {
         setSupportActionBar(mainBinding.toolbar);
     }
 
-    private void addData() {
-        itemList = new ArrayList<>();
-        itemList.add(new ItemData("Info Wisata", R.drawable.ic_tour));
-        itemList.add(new ItemData("Kontak Penting", R.drawable.ic_mobile_phone));
-        itemList.add(new ItemData("Kuliner DO", R.drawable.ic_kuliner));
-        itemList.add(new ItemData("Tentang Nunukan", R.drawable.ic_maps));
+    private void firstFragment() {
+
+        if (fragmentManager.findFragmentByTag(HomeFragment.FIRST_FRAGMENT) == null) {
+            fragmentManager.beginTransaction().add(R.id.frame_container, fragmentPage1, HomeFragment.FIRST_FRAGMENT).commit();
+            currentFragment = fragmentPage1;
+        } else {
+            currentFragment = getFragmentVisible();
+        }
+    }
+
+    private Fragment getFragmentVisible() {
+        List<Fragment> fragmentList = fragmentManager.getFragments();
+        for (Fragment fragment : fragmentList) {
+            if (fragment != null && fragment.isVisible()) {
+                return fragment;
+            }
+        }
+        return null;
+    }
+
+    private void setCurrentFragment(String tagFragment) {
+
+        switch (tagFragment) {
+            case HomeFragment.FIRST_FRAGMENT:
+                ViewUtils.fragmentTransition(fragmentManager, fragmentPage1, currentFragment, HomeFragment.FIRST_FRAGMENT);
+                currentFragment = fragmentPage1;
+                break;
+            case TourFragment.SECOND_FRAGMENT:
+                ViewUtils.fragmentTransition(fragmentManager, fragmentPage2, currentFragment, TourFragment.SECOND_FRAGMENT);
+                currentFragment = fragmentPage2;
+                break;
+            case ImportantContactFragment.THIRD_FRAGMENT:
+                ViewUtils.fragmentTransition(fragmentManager, fragmentPage3, currentFragment, ImportantContactFragment.THIRD_FRAGMENT);
+                currentFragment = fragmentPage3;
+                break;
+            case FoodDeliverFragment.FOURTH_FRAGMENT:
+                ViewUtils.fragmentTransition(fragmentManager, fragmentPage4, currentFragment, FoodDeliverFragment.FOURTH_FRAGMENT);
+                currentFragment = fragmentPage4;
+                break;
+        }
 
     }
 
@@ -163,33 +175,9 @@ public class MainActivity extends BaseActivity implements MainAdapter.ListItemCl
         builder.show();
     }
 
-
-    @Override
-    public void onListItemClick(int clickedItemIndex) {
-        Intent intent;
-        switch (clickedItemIndex) {
-            case 0:
-                intent = new Intent(this, InfoWisata.class);
-                startActivity(intent);
-                break;
-            case 1:
-                intent = new Intent(this, KontakPenting.class);
-                startActivity(intent);
-                break;
-            case 2:
-                intent = new Intent(this, KulinerDO.class);
-                startActivity(intent);
-                break;
-            case 3:
-                intent = new Intent(this, TentangNunukan.class);
-                startActivity(intent);
-                break;
-        }
-    }
-
-
     @Override
     public void onBackPressed() {
+
         closeApp -= 1;
         switch (closeApp) {
             case 1:

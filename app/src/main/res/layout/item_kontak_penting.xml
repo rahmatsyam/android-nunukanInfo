@@ -18,6 +18,7 @@
             <RelativeLayout style="@style/CustomNormal">
 
                 <RelativeLayout
+                    android:padding="4dp"
                     android:id="@+id/rl_icon"
                     style="@style/CustomWrap"
                     android:layout_margin="4dp">
