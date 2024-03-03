@@ -23,18 +23,23 @@ android {
 
         }
     }
-    compileSdkVersion 32
+
+    compileSdk = 34
+
     defaultConfig {
-        applicationId "io.github.rahsyarigami.infonunukan"
-        minSdkVersion 23
-        targetSdkVersion 32
+        applicationId = "io.github.rahsyarigami.infonunukan"
+        minSdk = 23
+        targetSdk = 34
         multiDexEnabled true
-        versionCode 4
-        versionName "1.2"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode = 4
+        versionName = "1.2"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         resConfigs "en", "id"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             shrinkResources true
@@ -48,9 +53,6 @@ android {
             zipAlignEnabled true
         }
 
-        /*  debug{
-
-          }*/
     }
 
     compileOptions {
