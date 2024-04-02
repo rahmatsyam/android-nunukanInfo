@@ -20,7 +20,7 @@ import io.github.rahsyarigami.infonunukan.R;
 import io.github.rahsyarigami.infonunukan.databinding.ActivityMainBinding;
 import io.github.rahsyarigami.infonunukan.ui.base.BaseActivity;
 import io.github.rahsyarigami.infonunukan.ui.detail.contact.ImportantContactFragment;
-import io.github.rahsyarigami.infonunukan.ui.detail.deliverfood.FoodDeliverFragment;
+import io.github.rahsyarigami.infonunukan.ui.detail.news.NewsFragment;
 import io.github.rahsyarigami.infonunukan.ui.detail.tour.TourFragment;
 import io.github.rahsyarigami.infonunukan.ui.main.home.HomeFragment;
 import io.github.rahsyarigami.infonunukan.util.ViewUtils;
@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity {
         fragmentPage1 = new HomeFragment();
         fragmentPage2 = new TourFragment();
         fragmentPage3 = new ImportantContactFragment();
-        fragmentPage4 = new FoodDeliverFragment();
+        fragmentPage4 = new NewsFragment();
 
         fragmentManager = getSupportFragmentManager();
 
@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity {
                     setCurrentFragment(ImportantContactFragment.THIRD_FRAGMENT);
                     break;
                 case R.id.page_4:
-                    setCurrentFragment(FoodDeliverFragment.FOURTH_FRAGMENT);
+                    setCurrentFragment(NewsFragment.TAG_NEWS);
                     break;
             }
         });
@@ -127,10 +127,11 @@ public class MainActivity extends BaseActivity {
                 ViewUtils.fragmentTransition(fragmentManager, fragmentPage3, currentFragment, ImportantContactFragment.THIRD_FRAGMENT);
                 currentFragment = fragmentPage3;
                 break;
-            case FoodDeliverFragment.FOURTH_FRAGMENT:
-                ViewUtils.fragmentTransition(fragmentManager, fragmentPage4, currentFragment, FoodDeliverFragment.FOURTH_FRAGMENT);
+            case NewsFragment.TAG_NEWS:
+                ViewUtils.fragmentTransition(fragmentManager, fragmentPage4, currentFragment, NewsFragment.TAG_NEWS);
                 currentFragment = fragmentPage4;
                 break;
+
         }
 
     }

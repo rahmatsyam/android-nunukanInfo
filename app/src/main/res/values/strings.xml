@@ -55,4 +55,6 @@
     <string name="lbl_tour_info">Info Wisata</string>
     <string name="lbl_important_contact">Kontak Penting</string>
     <string name="lbl_food">Kuliner</string>
+    <string name="lbl_news">Berita</string>
+    <string name="on_development">Dalam pengembangan</string>
 </resources>

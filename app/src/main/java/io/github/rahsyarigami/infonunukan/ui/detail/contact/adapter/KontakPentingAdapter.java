@@ -55,7 +55,6 @@ public class KontakPentingAdapter extends RecyclerView.Adapter<ContactViewHolder
 
     private List<ItemContact> setFilterColor() {
         List<ItemContact> contactList = new ArrayList<>();
-        contactList.clear();
         for (ItemContact itemContact : mItemContact) {
             itemContact.setColor(ViewUtils.getRandomGeneratorColor("400", mContext));
             contactList.add(itemContact);
