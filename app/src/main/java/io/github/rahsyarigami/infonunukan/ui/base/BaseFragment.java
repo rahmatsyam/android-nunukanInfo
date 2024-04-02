@@ -47,6 +47,7 @@ public abstract class BaseFragment extends Fragment {
         try {
             ViewBinding binding = (ViewBinding) inflate.invoke(null, inflater, container, false);
             bindingField.set(this, binding);
+            assert binding != null;
             return binding.getRoot();
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,11 +56,9 @@ public abstract class BaseFragment extends Fragment {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+    public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         initEvents();
     }
 

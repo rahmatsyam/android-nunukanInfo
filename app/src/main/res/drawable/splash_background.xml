@@ -3,10 +3,8 @@
 
     <item android:drawable="@drawable/gradient_background" />
 
+    <item
+        android:drawable="@drawable/ic_launcher"
+        android:gravity="center" />
 
-    <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/ic_launcher" />
-    </item>
 </layer-list>

@@ -78,7 +78,6 @@
     <style name="FullScreenDialogStyle">
 
 
-
         <!-- Set this to true if you want Full Screen without status bar -->
         <item name="android:windowFullscreen">false</item>
 
@@ -111,10 +110,93 @@
         <item name="android:windowExitAnimation">@anim/slide_down</item>
     </style>
 
+    <!--Custom Layout-->
+    <style name="CustomMatch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="CustomNormal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CustomWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CustomMatch.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CustomMatch.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="CustomNormal.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CustomNormal.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!---->
+
     <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShapeCircle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="MaterialButtonRounded">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:left">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">12dp</item>
+        <item name="iconTint">@color/colorWhite</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeCircle</item>
+    </style>
+
+    <style name="MaterialButtonRadius">
+        <item name="android:insetTop">2dp</item>
+        <item name="android:insetBottom">2dp</item>
+        <item name="android:insetRight">2dp</item>
+        <item name="android:left">2dp</item>
+        <item name="iconPadding">2dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">12dp</item>
+        <item name="iconTint">@color/colorWhite</item>
+    </style>
+
+    <style name="MyButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/Orange</item>
+    </style>
+
+    <style name="Orange">
+        <item name="colorPrimary">@color/light_blue_600</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.MediumComponent.Rounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+
     </style>
 
 </resources>

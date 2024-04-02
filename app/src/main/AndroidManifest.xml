@@ -6,10 +6,12 @@
 
     <application
         android:allowBackup="false"
+        android:name="androidx.multidex.MultiDexApplication"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
+            android:exported="true"
             android:name=".ui.SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -19,42 +21,13 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.detail.KulinerDO"
-            android:label="Kuliner Delivery Order"
-            android:theme="@style/AppTheme.Food" />
-        <activity
-            android:name=".ui.detail.TentangNunukan"
-            android:label="Tentang Nunukan"
-            android:theme="@style/AppTheme.About" />
         <activity android:name=".ui.base.BaseActivity" />
+
         <activity
-            android:name=".ui.detail.InfoWisata"
-            android:label="Info Wisata"
-            android:theme="@style/AppTheme.Tour" />
-        <activity
-            android:name=".ui.detail.KontakPenting"
-            android:label="Kontak Penting"
-            android:theme="@style/AppTheme.Contact" />
-        <activity
+            android:exported="false"
             android:name=".ui.main.MainActivity"
             android:label="Nunukan Info"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-            android:name=".ui.main.MainActivityTest"
-            android:label="Nunukan Info"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
 
         </activity>
 

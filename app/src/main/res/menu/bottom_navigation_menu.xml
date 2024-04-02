@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/page_1"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:title="@string/lbl_home" />
 
     <item
         android:id="@+id/page_2"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_map_24"
-        android:title="Info Wisata" />
+        android:title="@string/lbl_tour_info"
+        app:cnb_iconColor="@color/colorDarkPurplePrimary" />
 
     <item
         android:id="@+id/page_3"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_contact_phone_24"
-        android:title="Kontak Penting" />
+        android:title="@string/lbl_important_contact"
+        app:cnb_iconColor="@color/colorPrimary"/>
     <item
         android:id="@+id/page_4"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_fastfood_24"
-        android:title="Kuliner" />
+        android:icon="@drawable/baseline_announcement_24"
+        android:title="@string/lbl_news"
+        app:cnb_iconColor="@color/colorOrange"/>
 
 </menu>

@@ -1,72 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:shapeAppearance="@style/ShapeAppearance.MyApp.MediumComponent"
     xmlns:tools="http://schemas.android.com/tools"
+    app:cardUseCompatPadding="true"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/white"
-    android:orientation="vertical"
-    android:padding="@dimen/activity_padding_horizontal">
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_profil_kuliner"
-        android:layout_width="@dimen/icon_profil"
-        android:layout_height="@dimen/icon_profil"
-        android:layout_marginEnd="@dimen/margin_10"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/img_ayam_geprek" />
+    <RelativeLayout
+        style="@style/CustomNormal"
+        android:padding="@dimen/activity_padding_horizontal">
+
+        <io.github.rahsyarigami.infonunukan.util.CornerRadiusImageView
+            android:id="@+id/img_profil_kuliner"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/icon_profil"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tv_nama_usaha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_profil_kuliner"
+            android:ellipsize="end"
+            android:fontFamily="@font/nunito_black"
+            android:text="@string/txt_profilkuliner"
+            android:textSize="@dimen/font_size_14"
+            tools:ignore="RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/tv_kontak_kuliner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nama_usaha"
+            android:layout_toEndOf="@id/img_profil_kuliner"
+            android:text="@string/txt_title"
+            android:textSize="@dimen/font_size_12"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_kontak_kuliner"
+            android:layout_toEndOf="@id/img_profil_kuliner"
+            android:fontFamily="@font/nunito_black"
+            android:text="@string/txt_deskripsi"
+            android:textSize="@dimen/font_size_14"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_deskripsi_kuliner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_description"
+            android:layout_toEndOf="@id/img_profil_kuliner"
+            android:maxLines="2"
+            android:text="@string/txt_view"
+            android:textSize="@dimen/font_size_12" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_more"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@id/tv_deskripsi_kuliner"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/padding_8"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Selengkapnya"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkPrimaryPurple"
+            android:textSize="12sp" />
+
+        <!--    <ImageButton-->
+        <!--        android:id="@+id/btn_wa"-->
+        <!--        android:layout_width="@dimen/icon_size"-->
+        <!--        android:layout_height="@dimen/icon_size"-->
+        <!--        android:layout_alignParentEnd="true"-->
+        <!--        android:background="@drawable/item_selector"-->
+        <!--        android:contentDescription="@string/todo"-->
+        <!--        android:visibility="gone"-->
+        <!--        app:srcCompat="@drawable/ic_whatsapp"-->
+        <!--        tools:ignore="UnusedAttribute" />-->
+
+    </RelativeLayout>
 
 
-    <TextView
-        android:id="@+id/tv_nama_usaha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/img_profil_kuliner"
-        android:ellipsize="end"
-        android:fontFamily="@font/nunito_black"
-        android:text="@string/txt_profilkuliner"
-        android:textSize="@dimen/font_size_14"
-        tools:ignore="RelativeOverlap" />
-
-
-    <TextView
-        android:id="@+id/tv_kontak_kuliner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_nama_usaha"
-        android:layout_toEndOf="@id/img_profil_kuliner"
-        android:text="@string/txt_title"
-        android:textSize="@dimen/font_size_12" />
-
-    <TextView
-        android:id="@+id/tv_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_kontak_kuliner"
-        android:layout_marginTop="@dimen/margin_5"
-        android:layout_toEndOf="@id/img_profil_kuliner"
-        android:fontFamily="@font/nunito_black"
-        android:text="@string/txt_deskripsi"
-        android:textSize="@dimen/font_size_14" />
-
-    <TextView
-        android:id="@+id/tv_deskripsi_kuliner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_description"
-        android:layout_toEndOf="@id/img_profil_kuliner"
-        android:maxLines="4"
-        android:text="@string/txt_view"
-        android:textSize="@dimen/font_size_12" />
-
-    <ImageButton
-        android:id="@+id/btn_wa"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/item_selector"
-        android:contentDescription="@string/todo"
-        app:srcCompat="@drawable/ic_whatsapp"
-        tools:ignore="UnusedAttribute" />
-</RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
 

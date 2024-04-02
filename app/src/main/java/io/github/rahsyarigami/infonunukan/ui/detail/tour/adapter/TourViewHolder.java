@@ -1,7 +1,6 @@
 package io.github.rahsyarigami.infonunukan.ui.detail.tour.adapter;
 
 import android.text.TextUtils;
-import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,7 +11,7 @@ import io.github.rahsyarigami.infonunukan.databinding.ItemInfoWisataBinding;
 
 public class TourViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemInfoWisataBinding mBinding;
+    protected ItemInfoWisataBinding mBinding;
 
     public TourViewHolder(ItemInfoWisataBinding binding) {
         super(binding.getRoot());
@@ -26,12 +25,7 @@ public class TourViewHolder extends RecyclerView.ViewHolder {
         mBinding.tvDescription.setLines(3);
         mBinding.tvDescription.setEllipsize(TextUtils.TruncateAt.END);
 
-        mBinding.btnReadMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick(item);
-            }
-        });
+        mBinding.btnReadMore.setOnClickListener(v -> listener.onItemClick(item));
 
 
     }

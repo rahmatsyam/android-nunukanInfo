@@ -1,26 +1,14 @@
 package io.github.rahsyarigami.infonunukan.ui.base;
 
-import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class BaseActivity extends AppCompatActivity {
-
-    public void orientationPotrait() {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-
-    }
-
-//    public void crashlyticsView() {
-//        Fabric.with(this, new Crashlytics());
-//    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
